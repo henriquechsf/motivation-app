@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_splash.*
 import tech.henriquedev.motivation.R
+import tech.henriquedev.motivation.infra.MotivationConstants
 import tech.henriquedev.motivation.infra.SecurityPreferences
 
 class SplashActivity : AppCompatActivity(), View.OnClickListener {
@@ -23,6 +24,18 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         buttonSave.setOnClickListener(this)
+
+        verifyName()
+    }
+
+    private fun verifyName() {
+        val name = mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
+
+        if (name != "") {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     override fun onClick(view: View) {
@@ -40,6 +53,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         } else {
             Toast.makeText(this, "Informe seu nome", Toast.LENGTH_SHORT).show()
         }
