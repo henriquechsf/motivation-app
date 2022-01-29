@@ -50,18 +50,21 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:textSize="18sp"
-        android:text="Hello World!" />
+        android:text=""
+        tools:text="Ola Jon Doe" />
 
     <TextView
         android:id="@+id/textFrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textName"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="32dp"
-        android:textSize="22sp"
-        android:text="Hello World!" />
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:text=""
+        tools:text="Não sabendo que era impossível, foi lá e fez."
+        android:textSize="22sp" />
     
     <View
         android:layout_width="128dp"
